@@ -21,3 +21,9 @@ Drive us to User Stories.
 - How many urls generated per second?
 - Read / write ratio?
 - To determine the short url lenght is going to be 62^7 (a-z, A-Z, 0-9) this will give us 3.5 trillion possible urls which is fine because we want to be able to generate 1000 urls per second.
+
+Github. GIT for repository and Github pipelines for the CI/CD
+Github actions.
+
+- Github environments in the settings tab (Dev, testing/staging, prod).
+-  Create new env -> Environment secrets -> Env variables. The difference between a secret and a variable is the accessibility. 
