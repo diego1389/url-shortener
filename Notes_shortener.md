@@ -27,3 +27,10 @@ Github actions.
 
 - Github environments in the settings tab (Dev, testing/staging, prod).
 -  Create new env -> Environment secrets -> Env variables. The difference between a secret and a variable is the accessibility. 
+```
+dotnet new list
+dotnet new webapi
+dotnet new solution
+dotnet new sln --name UrlShortener
+dotnet sln add Api/Api.csproj --solution-folder Api
+```
