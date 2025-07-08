@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/diego.guillen/Documents/Github/Url shortener/Api/Api.csproj",
-      "projectName": "Api",
-      "projectPath": "/Users/diego.guillen/Documents/Github/Url shortener/Api/Api.csproj",
+      "projectUniqueName": "/Users/diego.guillen/Documents/Github/Url shortener/UrlShortener.Api/UrlShortener.Api.csproj",
+      "projectName": "UrlShortener.Api",
+      "projectPath": "/Users/diego.guillen/Documents/Github/Url shortener/UrlShortener.Api/UrlShortener.Api.csproj",
       "packagesPath": "/Users/diego.guillen/.nuget/packages/",
-      "outputPath": "/Users/diego.guillen/Documents/Github/Url shortener/Api/obj/",
+      "outputPath": "/Users/diego.guillen/Documents/Github/Url shortener/UrlShortener.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/diego.guillen/.nuget/NuGet/NuGet.Config"

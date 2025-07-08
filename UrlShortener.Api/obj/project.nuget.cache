@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lk+/13L068oK8LfBECYDuTsAE9RMokq26ZQAncLEAZ6Y1ZO2fOYKW/Xv+SmA1dWAV2oObXPZGlabXqHfLVM5Vw==",
+  "dgSpecHash": "2geJqUqVA4E3Ym739y6YasNNW+eDutiUSkWt8iuOjPk2YYfmqbmtsWuUHOQQswonYyIgEejd06zj7hRNjSCQMg==",
   "success": true,
-  "projectFilePath": "/Users/diego.guillen/Documents/Github/Url shortener/Api/Api.csproj",
+  "projectFilePath": "/Users/diego.guillen/Documents/Github/Url shortener/UrlShortener.Api/UrlShortener.Api.csproj",
   "expectedPackageFiles": [
     "/Users/diego.guillen/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "/Users/diego.guillen/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
