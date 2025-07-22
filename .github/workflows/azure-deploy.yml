@@ -41,3 +41,5 @@ jobs:
           scope: resourcegroup
           resourceGroupName: ${{vars.RESOURCE_GROUP_NAME}}
           template: ./infrastructure/main.bicep
+
+          
