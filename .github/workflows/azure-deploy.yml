@@ -7,6 +7,8 @@ on:
   paths:
     - infrastructure/**
  pull_request:
+  branches:
+   - main
   paths:
   - infrastructure/**
  workflow_dispatch: # manual trigger
@@ -42,4 +44,57 @@ jobs:
           resourceGroupName: ${{vars.RESOURCE_GROUP_NAME}}
           template: ./infrastructure/main.bicep
 
-          
+ deploy-stg:
+    runs-on: ubuntu-latest
+    needs: deploy-dev
+    environment: Staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2.1.1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: azure/CLI@v2
+        with:
+          inlineScript: |
+           #!/bin/bash
+           az group create --name ${{vars.RESOURCE_GROUP_NAME}} --location ${{vars.RESOURCE_GROUP_LOCATION}}
+           echo "Azure resource group created successfully."
+      - name: Deploy
+        uses: azure/arm-deploy@v2
+        with:
+          scope: resourcegroup
+          resourceGroupName: ${{vars.RESOURCE_GROUP_NAME}}
+          template: ./infrastructure/main.bicep
+
+ deploy-prd:
+    runs-on: ubuntu-latest
+    needs: deploy-stg
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: Production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2.1.1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: azure/CLI@v2
+        with:
+          inlineScript: |
+           #!/bin/bash
+           az group create --name ${{vars.RESOURCE_GROUP_NAME}} --location ${{vars.RESOURCE_GROUP_LOCATION}}
+           echo "Azure resource group created successfully."
+      - name: Deploy
+        uses: azure/arm-deploy@v2
+        with:
+          scope: resourcegroup
+          resourceGroupName: ${{vars.RESOURCE_GROUP_NAME}}
+          template: ./infrastructure/main.bicep
