@@ -60,6 +60,11 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          
+      - name: Debug resource group inputs
+        run: |
+          echo "RESOURCE_GROUP_NAME=${{ vars.RESOURCE_GROUP_NAME }}"
+          echo "RESOURCE_GROUP_LOCATION=${{ vars.RESOURCE_GROUP_LOCATION }}"
 
       - name: Create resource group
         uses: azure/CLI@v2
