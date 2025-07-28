@@ -18,9 +18,9 @@ permissions:
   contents: read
 
 jobs:
-  deploy-stg:
+  deploy-prd:
     runs-on: ubuntu-latest
-    environment: Staging
+    environment: Production
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
