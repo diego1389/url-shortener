@@ -418,3 +418,9 @@ Go to Microsoft Entra-> All Applications -> App registrations -> Find Github-
 - Configure the environment variables for each env in GitHub environments (settings).
 - In Azure create federated credentials for Staging and Production environments.
 - Push your changes.
+- Modify api.yml to publish your code to the resource group.
+- Command to get the AZURE_WEBAPP_PUBLISH_PROFILE:
+```
+az webapp deployment list-publishing-profiles --name api-tv2efnbtk6qio --resource-group urlshortener-dev --xml
+```
+- Paste that xml result to the secrets in Development environment.
