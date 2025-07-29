@@ -57,7 +57,7 @@ jobs:
           RG_LOCATION: ${{ vars.RESOURCE_GROUP_LOCATION }}
         with:
           inlineScript: |
-            az group create --name "urlshortener-stg" --location "westeurope"
+            az group create --name "${{ vars.RESOURCE_GROUP_NAME }}" --location "${{ vars.RESOURCE_GROUP_LOCATION }}"
             echo "Azure resource group created successfully."
 
       - name: Deploy
