@@ -18,9 +18,9 @@ permissions:
   contents: read
 
 jobs:
-  deploy-dev:
+  deploy-stg:
     runs-on: ubuntu-latest
-    environment: Development
+    environment: Staging
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -31,6 +31,12 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      
+      - name: Check Azure credentials
+        run: |
+          if [ -z "${{ secrets.AZURE_CLIENT_ID }}" ]; then echo "AZURE_CLIENT_ID is NOT set"; else echo "AZURE_CLIENT_ID is set"; fi
+          if [ -z "${{ secrets.AZURE_TENANT_ID }}" ]; then echo "AZURE_TENANT_ID is NOT set"; else echo "AZURE_TENANT_ID is set"; fi
+          if [ -z "${{ vars.AZURE_SUBSCRIPTION_ID }}" ]; then echo "AZURE_SUBSCRIPTION_ID is NOT set"; else echo "AZURE_SUBSCRIPTION_ID is set"; fi
 
       - name: Create resource group
         uses: azure/CLI@v2
