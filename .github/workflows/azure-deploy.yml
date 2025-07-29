@@ -38,6 +38,11 @@ jobs:
           if [ -z "${{ secrets.AZURE_TENANT_ID }}" ]; then echo "AZURE_TENANT_ID is NOT set"; else echo "AZURE_TENANT_ID is set"; fi
           if [ -z "${{ vars.AZURE_SUBSCRIPTION_ID }}" ]; then echo "AZURE_SUBSCRIPTION_ID is NOT set"; else echo "AZURE_SUBSCRIPTION_ID is set"; fi
 
+      - name: Check resource group variables
+        run: |
+          if [ -z "${{ vars.RESOURCE_GROUP_NAME }}" ]; then echo "RESOURCE_GROUP_NAME is NOT set"; else echo "RESOURCE_GROUP_NAME is set"; fi
+          if [ -z "${{ vars.RESOURCE_GROUP_LOCATION }}" ]; then echo "RESOURCE_GROUP_LOCATION is NOT set"; else echo "RESOURCE_GROUP_LOCATION is set"; fi
+          
       - name: Create resource group
         uses: azure/CLI@v2
         env:
