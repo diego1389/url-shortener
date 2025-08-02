@@ -424,3 +424,15 @@ Go to Microsoft Entra-> All Applications -> App registrations -> Find Github-
 az webapp deployment list-publishing-profiles --name api-tv2efnbtk6qio --resource-group urlshortener-dev --xml
 ```
 - Paste that xml result to the secrets in Development environment.
+- After you publish you can consume the api:
+
+https://api-tv2efnbtk6qio.azurewebsites.net/weatherforecast
+
+Settings of application access to those settings.
+DIfferent ways to store and retrieve pieces of configuration:
+Configurations -> App settings
+               -> env variables
+               -> secret managers
+
+- Azure Key vault 
+- 
