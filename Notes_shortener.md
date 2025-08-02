@@ -435,4 +435,4 @@ Configurations -> App settings
                -> secret managers
 
 - Azure Key vault 
-- 
+- Create a new module inside infrastructure/modules for secrets and create the keyvault.bicep file 
