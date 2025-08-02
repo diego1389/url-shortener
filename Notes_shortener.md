@@ -436,3 +436,14 @@ Configurations -> App settings
 
 - Azure Key vault 
 - Create a new module inside infrastructure/modules for secrets and create the keyvault.bicep file 
+- Now that key vault is in place we want to integrate it with our applications. 
+- In the api folder install:
+```bash
+dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets --version 1.3.2
+```
+- Also install
+```bash
+dotnet add package Azure.Identity --version 1.13.1
+```
+
+- Modify appservice.bicep and add an appsetting to the webapp to pass the keyvaultname setting that we're going to use in the webapi Program.cs
