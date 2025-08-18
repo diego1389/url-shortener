@@ -1,1 +1,8 @@
-**/.vs/
+# Ignore build output and config files
+Debug/
+Release/
+*.nuget.cache
+*.assets.json
+*.user
+*.suo
+*.vs/
