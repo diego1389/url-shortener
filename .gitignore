@@ -6,3 +6,6 @@ Release/
 *.user
 *.suo
 *.vs/
+/UrlShortener.Api/obj/UrlShortener.Api.csproj.nuget.dgspec.json
+/UrlShortener.Api/obj/UrlShortener.Api.csproj.nuget.g.props
+/UrlShortener.Api/obj/UrlShortener.Api.csproj.nuget.g.targets
